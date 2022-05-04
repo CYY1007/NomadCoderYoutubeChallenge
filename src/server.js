@@ -3,14 +3,34 @@ import express  from "express";
 const app = express();
 const PORT = 3000;
 
-app.get("/", (req,res) => res.send("<h1>This is home!</h1>"));
+const urlLogger = (req,res,next) => {
+    console.log("req:", req.originalUrl); 
+    next();}
 
-app.get("/login", (req,res) => res.send("<h1>This is login!</h1>"));
+const timeLogger = (req,res,next) =>{
+    let date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1
+    const day = date.getDay() + 1
+    console.log(`Time: ${year}.${month}.${day}`);
+    next();
+}
 
-app.get("/about", (req,res) => res.send("<h1>This is about!</h1>"))
+const securityLogger = (req,res,next) =>{
+    const result =  req.protocol === "https" ? "Secure" : "Insecure";
+    console.log(result);
+    next();
+}
 
-app.get("/contact", (req,res) => res.send("<h1>This is contact!</h1>"));
+const protectorMiddleware = (req,res,next) =>{
+    console.log("you can't move to this url");
+    res.redirect(301,'/');
+}
 
+app.use(urlLogger,timeLogger,securityLogger);
+
+app.get(`/protected`, protectorMiddleware)
+app.get('/', (req,res) => res.end())
 
 
 
