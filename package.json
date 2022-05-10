@@ -1,0 +1,29 @@
+{
+  "name": "youtubechallenge",
+  "version": "1.0.0",
+  "description": "youtube challenge project",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CYY1007/NomadCoderYoutubeChallenge.git"
+  },
+  "author": "yongwook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CYY1007/NomadCoderYoutubeChallenge/issues"
+  },
+  "homepage": "https://github.com/CYY1007/NomadCoderYoutubeChallenge#readme",
+  "dependencies": {
+    "babel-loader": "^8.2.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.17.10"
+  }
+}

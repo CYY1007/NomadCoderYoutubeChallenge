@@ -6,6 +6,8 @@ import story from "./routers/storyRouter";
 const app = express();
 const PORT = 3000;
 
+app.set("view engine", "pug");
+app.set("views", process.cwd() + '/src/views');
 
 app.use('/users',users);
 app.use('/stories',story);

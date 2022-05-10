@@ -1,6 +1,15 @@
 
-export const userHome = (req,res) => res.send(`<h1>User Home</h1>`);
-export const userPage = (req,res) => res.send(`<h1>This is ${req.params.id}'s Page</h1>`);
-export const userEdit = (req,res) => res.send(`<h1>User Edit Page</h1>`);
-export const joinUser = (req,res) => res.send(`<h1>Join!</h1>`);
-export const loginUser = (req,res) => res.send(`<h1>Login Page!</h1>`);
+export const userHome = (req,res) => 
+res.render("userView/userhome",{pageTitle:"see users",pageName:"see users"})
+
+export const userPage = (req,res) => 
+res.render("userView/user",{pageTitle:`user ${req.params.id}`,pageName: `user ${req.params.id}'s`,userID:`${req.params.id}`})
+
+export const userEdit = (req,res) => 
+res.render("userView/edituser",{pageTitle:"edit user",pageName:"edit user"})
+
+export const joinUser = (req,res) => 
+res.render("globalView/join",{pageTitle:"join",pageName:"join"})
+
+export const loginUser = (req,res) => 
+res.render("globalView/login",{pageTitle:"login",pageName:"login"})
