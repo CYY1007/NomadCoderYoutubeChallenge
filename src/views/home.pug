@@ -1,0 +1,8 @@
+extends index
+include mixins/movies
+
+block content
+    if movies
+        +makeVideos(movies)
+    else 
+        h3 sorry there is no videos.....

@@ -1,2 +1,6 @@
-header 
-    h1 This is #{pageName} Page!
+header
+  h1 #{PageTitle}
+  form(method="get", action="/filter")
+    input(name="year",placeholder="Filter by year")
+    input(name="rating",placeholder="Filter by rating" type="number")
+    input(value="search",type="submit")

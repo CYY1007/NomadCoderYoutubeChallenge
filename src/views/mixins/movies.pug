@@ -1,0 +1,5 @@
+mixin makeVideos(movies)
+    div
+        each movie in movies
+            h4
+                a(href=`/${movie.id}`)=movie.title
